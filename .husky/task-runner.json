@@ -1,0 +1,19 @@
+{
+  "$schema": "https://alirezanet.github.io/Husky.Net/schema.json",
+  "tasks": [
+    {
+      "name": "csharpier-check",
+      "command": "dotnet",
+      "args": ["csharpier", "--check", "."],
+      "include": ["**/*.cs", "**/*.vb"],
+      "group": "pre-commit"
+    },
+    {
+      "name": "warning-check",
+      "command": "dotnet",
+      "group": "pre-commit",
+      "args": ["build", "/warnaserror"],
+      "include": ["**/*.cs", "**/*.vb"]
+    }
+  ]
+}
